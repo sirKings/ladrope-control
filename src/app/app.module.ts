@@ -1,6 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ServiceService } from './service.service';
+
 import { RoutingModule } from './routing/routing.module';
 
 import { AngularFireModule } from 'angularfire2';
@@ -15,6 +19,9 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { OrdersComponent } from './orders/orders.component';
 import { MessagesComponent } from './messages/messages.component';
 import { SubscriptionComponent } from './subscription/subscription.component';
+import { SigninComponent } from './signin/signin.component';
+import { SignupComponent } from './signup/signup.component';
+import { OrderDetailComponent } from './orders/order-detail/order-detail.component';
 
 @NgModule({
   declarations: [
@@ -23,16 +30,21 @@ import { SubscriptionComponent } from './subscription/subscription.component';
     SidebarComponent,
     OrdersComponent,
     MessagesComponent,
-    SubscriptionComponent
+    SubscriptionComponent,
+    SigninComponent,
+    SignupComponent,
+    OrderDetailComponent
   ],
   imports: [
     BrowserModule,
     RoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFireDatabaseModule
   ],
-  providers: [],
+  providers: [ServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

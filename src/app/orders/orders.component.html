@@ -1,3 +1,93 @@
-<p>
-  orders works!
-</p>
+<div class='order'>
+	<ul class='tabs'>
+		<li (click)='pend()' [ngClass]="{'active': pending}">Pending Orders ({{pendingOrders.length}})</li>
+		<li (click)='complete()' [ngClass]="{'active': completed}">Completed Orders ({{completedOrders.length}})</li>
+		<li (click)='cancel()' [ngClass]="{'active': canceled}">Canceled Orders ({{canceledOrders.length}})</li>
+		<li (click)='decline()' [ngClass]="{'active': declined}">Declined Orders ({{declinedOrders.length}})</li>
+	</ul>
+
+	<div class='container'>
+	<div class='row'>
+		<div class='col-lg-3 col-sm-4 col-md-3'>
+			<div class='list'>
+				<div *ngIf='pending'>
+				  <div *ngIf = '!isPendingOrder'>
+				    <p class= 'story' >You don't have have any pending order</p>
+				  </div>
+				  <div *ngIf = 'isPendingOrder'>
+				  	<div class='order-list'>
+				  	<hr>
+				  		<div  *ngFor = ' let order of pendingOrders' >
+
+				  				<div class="pointer card" (click)='select(order)'>
+				  				  <div [ngClass]="{'activeOrder': selected(order)}">
+				  				  	  <h4>{{order.orderId}}</h4>
+				  				  	  <p>Delivery date: {{order.tailorDate | date: 'dd/MM/yyyy'}}</p>
+				  				  	  <hr>
+				  				</div>	
+				  			</div>
+				  	</div>
+				  </div>
+				</div>
+
+				<div *ngIf='completed'>
+				  <div *ngIf = '!isCompletedOrder'>
+				    <p class= 'story'>You don't have have any completed order</p>
+				  </div>
+				  <div *ngIf = 'isCompletedOrder'>
+				  	<div class='order-list'>
+				  	<hr>
+				    	<div *ngFor = ' let order of completedOrders'>
+				      		<div class='card pointer' (click)='select(order)'>
+				      		    <h4 >{{order.orderId}}</h4>
+				            	<p >Delivery date: {{order.tailorDate | date: 'dd/MM/yyyy'}}</p>
+				            	<hr>
+				        </div>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+
+				<div *ngIf='canceled'>
+				  <div *ngIf = '!isCanceledOrder'>
+				    <p class= 'story'>You don't have have any canceled order</p>
+				  </div>
+				  <div *ngIf = 'isCanceledOrder'>
+				    <div class='order-list'>
+				  	<hr>
+				    	<div *ngFor = ' let order of canceledOrders'>
+				      		<div class='card pointer' (click)='select(order)'>
+				      		    <h4 >{{order.orderId}}</h4>
+				            	<p >Delivery date: {{order.tailorDate | date: 'dd/MM/yyyy'}}</p>
+				            	<hr>
+				        </div>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+
+				<div *ngIf='declined'>
+				  <div *ngIf = '!isDeclinedOrder'>
+				    <p class= 'story'>You don't have have any declined order</p>
+				  </div>
+				  <div *ngIf = 'isDeclinedOrder'>
+				    <div class='order-list'>
+				  	<hr>
+				    	<div *ngFor = ' let order of dclinedOrders'>
+				      		<div class='card pointer' (click)='select(order)'>
+				      		    <h4 >{{order.orderId}}</h4>
+				            	<p >Delivery date: {{order.tailorDate | date: 'dd/MM/yyyy'}}</p>
+				            	<hr>
+				        </div>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class='col-lg-7 col-sm-8 col-md-8'>
+			<app-order-detail></app-order-detail>
+		</div>
+	</div>
+</div>

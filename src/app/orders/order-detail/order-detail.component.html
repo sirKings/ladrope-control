@@ -1,0 +1,8 @@
+<div class='detail'>
+	<div *ngIf = '!order'>
+		<h4>No order selected</h4>
+	</div>
+	<div *ngIf = 'order'>
+		<h4>{{order.name}}</h4>
+	</div>
+</div>
