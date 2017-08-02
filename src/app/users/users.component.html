@@ -1,0 +1,21 @@
+<div class= 'users'>
+	<h3>Users</h3>
+ 	<div class='row'>
+ 		<div class='col-lg-2'>
+ 			<div class='list'>
+ 				<div *ngFor= 'let user of users'>
+ 					<div class='card pointer' (click)='select(user)'>
+				  		<div [ngClass]="{'active': selected(user)}">
+	 						<h4>{{user.displayName}}</h4>
+	 						<p>{{user.email}}</p>
+	 						<hr>
+ 						</div>
+ 					</div>
+ 				</div>
+ 			</div>
+ 		</div>
+ 		<div class='col-lg-10'>
+ 			<app-user-details></app-user-details>
+ 		</div>
+ 	</div>
+</div>

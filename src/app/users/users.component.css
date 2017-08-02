@@ -19,6 +19,7 @@ hr {
 	cursor: pointer;
 }
 
-app-message{
+app-user-details {
 	position: fixed;
+	width: 800px
 }

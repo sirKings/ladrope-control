@@ -1,11 +1,7 @@
-.detail{
+.user{
 	background-color: white;
 	border: 1px solid grey;
-	padding: 10px;
-}
-
-img {
-	height: 200px
+	padding: 5px;
 }
 
 li {

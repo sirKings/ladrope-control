@@ -22,6 +22,9 @@ import { SubscriptionComponent } from './subscription/subscription.component';
 import { SigninComponent } from './signin/signin.component';
 import { SignupComponent } from './signup/signup.component';
 import { OrderDetailComponent } from './orders/order-detail/order-detail.component';
+import { MessageComponent } from './messages/message/message.component';
+import { UsersComponent } from './users/users.component';
+import { UserDetailsComponent } from './users/user-details/user-details.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +36,10 @@ import { OrderDetailComponent } from './orders/order-detail/order-detail.compone
     SubscriptionComponent,
     SigninComponent,
     SignupComponent,
-    OrderDetailComponent
+    OrderDetailComponent,
+    MessageComponent,
+    UsersComponent,
+    UserDetailsComponent
   ],
   imports: [
     BrowserModule,

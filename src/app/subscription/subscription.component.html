@@ -1,3 +1,15 @@
-<p>
-  subscription works!
-</p>
+	<h3>Subscribers</h3>
+ 	<div class='row'>
+ 		<div class='col-lg-3'>
+ 			<div class='list'>
+ 				<div *ngFor= 'let sub of subs'>
+ 					<div class='card'>
+				  		<div>
+	 						<h4>{{sub.email}}</h4>
+	 						<hr>
+ 						</div>
+ 					</div>
+ 				</div>
+ 			</div>
+ 		</div>
+ 	</div>

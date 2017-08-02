@@ -5,6 +5,8 @@ import { Subject } from 'rxjs/Subject'
 export class ServiceService {
 
 selectedOrder = new Subject<{}>();
+selectedMessage = new Subject<{}>();
+selectedUser = new Subject<{}>();
 
   constructor() { }
 

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
 
 import { ServiceService } from '../service.service';
 
@@ -30,7 +29,7 @@ isCanceledOrder = false;
 isCompletedOrder = false;
 isDeclinedOrder = false;
 
-  constructor(public afAuth: AngularFireAuth, public db: AngularFireDatabase, public router: Router, private service: ServiceService, private route: ActivatedRoute) { }
+  constructor(public afAuth: AngularFireAuth, public db: AngularFireDatabase, private service: ServiceService) { }
 
   
 

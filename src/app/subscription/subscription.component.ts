@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ServiceService } from '../service.service';
+
+import { AngularFireDatabase } from 'angularfire2/database';
+
 
 @Component({
   selector: 'app-subscription',
@@ -7,9 +11,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SubscriptionComponent implements OnInit {
 
-  constructor() { }
+subs
+  constructor(private service: ServiceService, private db: AngularFireDatabase) { }
 
-  ngOnInit() {
-  }
+   ngOnInit() {
+   	this.db.list('newsletter', {
+   		query: {
+   			orderByPriority: true
+   		}
+   	}).subscribe((res) => {
+   		this.subs = res
+   	})
+
+   }
 
 }
